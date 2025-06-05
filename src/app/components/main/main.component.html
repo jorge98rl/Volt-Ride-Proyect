@@ -57,20 +57,19 @@
                     </div>
                     <div class="card-footer d-flex flex-column w-100 justify-content-center">
                         <div class="d-flex flex-row justify-content-center align-items-center mb-2">
-                            <span class="m-2 fs-3">{{ product.price }}€</span>
-                            <button 
-  class="btn btn-link p-0 m-2" 
-  style="cursor:pointer; color: inherit;" 
-  (click)="addToCart(product)" 
-  [attr.aria-label]="'Añadir ' + product.name + ' al carrito'">
-  <i class="fa-solid fa-cart-shopping fa-2x"></i>
-</button>
+                            <span class="m-2 fs-3" style="text-decoration: line-through;">{{ product.price }}€</span>
+                            <span class="m-2 fs-3">{{ product.priceDescount }}€</span>
+                            <button class="btn btn-link p-0 m-2" style="cursor:pointer; color: inherit;"
+                                (click)="addToCart(product)"
+                                [attr.aria-label]="'Añadir ' + product.name + ' al carrito'">
+                                <i class="fa-solid fa-cart-shopping fa-2x"></i>
+                            </button>
                         </div>
                         <button class="btn btn-danger w-100"
                             (click)="openDescriptionModalById(product.name, product.descId)">
                             Saber más
                         </button>
-                        
+
                         <!-- Contenido modal oculto -->
                         <div [id]="product.descId" style="display:none;" [innerHTML]="product.description"></div>
                     </div>
@@ -100,7 +99,8 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content bg-dark border-0">
                         <div class="modal-body p-0">
-                            <img [src]="modalImageSrc" id="modalImage" class="img-fluid w-100" alt="Imagen ampliada" sizes="(max-width: 600px) 400px, 800px"/>
+                            <img [src]="modalImageSrc" id="modalImage" class="img-fluid w-100" alt="Imagen ampliada"
+                                sizes="(max-width: 600px) 400px, 800px" />
                         </div>
                     </div>
                 </div>
@@ -140,7 +140,7 @@
                             <a [href]="whatsappLink" target="_blank" class="btn btn-success"
                                 [class.disabled]="cart.length === 0"
                                 [attr.aria-disabled]="cart.length === 0 ? true : null"
-                                [style.pointerEvents]="cart.length === 0 ? 'none' : 'auto'">
+                                [style.pointerEvents]="cart.length === 0 ? 'none' : 'auto'" rel="noopener noreferrer">
                                 Finalizar pedido por WhatsApp
                             </a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

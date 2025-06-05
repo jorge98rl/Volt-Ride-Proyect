@@ -17,7 +17,6 @@ interface CartItem {
   standalone: true,
 })
 export class MainComponent implements AfterViewInit {
-
   ngAfterViewInit() {
     this.enableTooltips();
   }
@@ -26,6 +25,7 @@ export class MainComponent implements AfterViewInit {
   products = [
     {
       name: 'Ecoxtrem Bison GT BLUE/WHITE',
+      priceDescount: 749,
       price: 599,
       image: 'assets/patinete-2.webp',
       fullImage: 'assets/patinete-2.webp',
@@ -61,6 +61,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem Bison GT BLUE/GREY',
+      priceDescount: 749,
       price: 599,
       image: 'assets/patinete-3.webp',
       fullImage: 'assets/patinete-3.webp',
@@ -96,6 +97,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 ORANGE/BLACK',
+      priceDescount: 749,
       price: 699,
       image: 'assets/patinete-4.webp',
       fullImage: 'assets/patinete-4.webp',
@@ -131,6 +133,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 Tank BLUE/WHITE',
+      priceDescount: 749,
       price: 699,
       image: 'assets/patinete-5.webp',
       fullImage: 'assets/patinete-5.webp',
@@ -166,6 +169,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem Linear',
+      priceDescount: 749,
       price: 330,
       image: 'assets/patinete-6.webp',
       fullImage: 'assets/patinete-6.webp',
@@ -199,6 +203,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'OOTD T10',
+      priceDescount: 749,
       price: 549,
       image: 'assets/patinete-7.webp',
       fullImage: 'assets/patinete-7.webp',
@@ -233,6 +238,75 @@ export class MainComponent implements AfterViewInit {
         </ul>
       `,
     },
+    {
+      name: 'Ecoxtrem M41 GREEN/BLACK',
+      priceDescount: 749,
+      price: 699,
+      image: 'assets/patinete-8.webp',
+      fullImage: 'assets/patinete-8.webp',
+      descId: 'desc-ecoxtrem',
+      description: `
+        <p><strong>EcoXtrem M41 Tank</strong> es un patinete eléctrico todoterreno de alto
+          rendimiento, diseñado para usuarios que buscan potencia, autonomía y comodidad en
+          sus desplazamientos urbanos y recreativos.</p>
+
+        <hr>
+
+        <h5>🔧 Especificaciones técnicas</h5>
+        <ul>
+          <li><strong>Motor:</strong> 800 W sin escobillas</li>
+          <li><strong>Potencia máxima:</strong> hasta 1200 W</li>
+          <li><strong>Batería:</strong> Litio de 48 V y 16 Ah</li>
+          <li><strong>Velocidad máxima:</strong> 25 km/h (limitada según normativa DGT); posibilidad de alcanzar hasta 45 km/h en áreas privadas</li>
+          <li><strong>Autonomía:</strong> hasta 50 km por carga, dependiendo del peso del usuario, tipo de ruta y carga de la batería</li>
+          <li><strong>Tiempo de carga:</strong> aproximadamente 6 a 8 horas</li>
+          <li><strong>Peso:</strong> 28 kg</li>
+          <li><strong>Dimensiones:</strong> 120 x 120 x 57,5 cm</li>
+          <li><strong>Capacidad de carga:</strong> hasta 100 kg</li>
+          <li><strong>Edad recomendada:</strong> a partir de 16 años</li>
+          <li><strong>Ruedas:</strong> neumáticos mixtos de 10 pulgadas</li>
+          <li><strong>Suspensión:</strong> doble suspensión delantera y trasera</li>
+          <li><strong>Frenos:</strong> frenos de disco delanteros y traseros</li>
+          <li><strong>Iluminación:</strong> luz LED frontal y trasera</li>
+          <li><strong>Pantalla:</strong> LCD que muestra velocidad, nivel de batería y kilometraje</li>
+          <li><strong>Plegable:</strong> sí, con mecanismo de plegado rápido</li>
+          <li><strong>Homologación:</strong> cumple con las normativas de la DGT para circulación en vías públicas</li>
+        </ul>
+      `,
+    },
+    {
+      name: 'Ecoxtrem M41 2000W',
+      priceDescount: 749,
+      price: 1000,
+      image: 'assets/patinete-9.webp',
+      fullImage: 'assets/patinete-9.webp',
+      descId: 'desc-ecoxtrem-2000W',
+      description: `
+        <p><strong>Ecoxtrem M41 2000W</strong> es un patinete eléctrico todoterreno diseñado para ofrecer alta potencia, autonomía y comodidad en todo tipo de terrenos, ideal para usuarios que buscan rendimiento y estabilidad.</p>
+
+          <hr>
+
+          <h5>🔧 Especificaciones técnicas</h5>
+          <ul>
+            <li><strong>Motor:</strong> 2000 W de potencia nominal</li>
+            <li><strong>Velocidad máxima:</strong> hasta 40 km/h, según condiciones del terreno y peso del conductor</li>
+            <li><strong>Autonomía:</strong> entre 30 y 40 km por carga, dependiendo del peso del usuario, tipo de ruta y carga de la batería</li>
+            <li><strong>Batería:</strong> litio de 48 V y 12 Ah</li>
+            <li><strong>Tiempo de carga:</strong> 5 a 6 horas aproximadamente</li>
+            <li><strong>Peso:</strong> 34 kg</li>
+            <li><strong>Dimensiones:</strong> 116 x 60 x 33 cm</li>
+            <li><strong>Capacidad de carga:</strong> hasta 120 kg</li>
+            <li><strong>Ruedas:</strong> neumáticos extra anchos de 6.5 pulgadas (9.5 cm), ideales para terrenos irregulares</li>
+            <li><strong>Suspensión:</strong> amortiguador delantero y doble amortiguador trasero para mayor estabilidad y confort</li>
+            <li><strong>Frenos:</strong> discos en ambas ruedas, para una frenada eficiente y segura</li>
+            <li><strong>Iluminación:</strong> luces LED frontal y trasera con luz de freno integrada</li>
+            <li><strong>Pantalla:</strong> LCD con indicador del nivel de batería</li>
+            <li><strong>Plegable:</strong> estructura plegable para facilitar transporte y almacenamiento</li>
+            <li><strong>Extras:</strong> sillín ajustable y desmontable, claxon integrado</li>
+          </ul>
+
+      `,
+    },
   ];
 
   productSelected = this.products[0];
@@ -242,15 +316,15 @@ export class MainComponent implements AfterViewInit {
 
   constructor(private cd: ChangeDetectorRef) { }
 
-
   private enableTooltips(): void {
     if (typeof document !== 'undefined') {
-      const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+      const tooltipTriggerList = Array.from(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
       tooltipTriggerList.forEach((tooltipTriggerEl) => {
         new bootstrap.Tooltip(tooltipTriggerEl);
       });
     }
-
   }
 
   changeProduct(product: any): void {
@@ -264,19 +338,23 @@ export class MainComponent implements AfterViewInit {
 
   addToCart(product: any): void {
     console.log('Producto añadido al carrito:', product);
-    const existingItem = this.cart.find(item => item.name === product.name);
+    const existingItem = this.cart.find((item) => item.name === product.name);
     if (existingItem) {
       existingItem.quantity++;
     } else {
-      this.cart.push({ name: product.name, price: product.price, quantity: 1 });
+      this.cart.push({ name: product.name, price: product.priceDescount, quantity: 1 });
     }
+
+    this.updateWhatsappLink();
   }
 
   removeFromCart(product: any): void {
-    const index = this.cart.findIndex(item => item.name === product.name);
+    const index = this.cart.findIndex((item) => item.name === product.name);
     if (index !== -1) {
       this.cart.splice(index, 1);
     }
+
+    this.updateWhatsappLink();
   }
 
   get total(): number {
@@ -293,15 +371,18 @@ export class MainComponent implements AfterViewInit {
   }
 
   getTotal(): number {
-    return this.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+    return this.cart.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   }
 
   removeOneFromCart(productName: string): void {
-    const item = this.cart.find(i => i.name === productName);
+    const item = this.cart.find((i) => i.name === productName);
     if (item) {
       item.quantity--;
       if (item.quantity <= 0) {
-        this.cart = this.cart.filter(i => i.name !== productName);
+        this.cart = this.cart.filter((i) => i.name !== productName);
       }
     }
     this.updateWhatsappLink();
@@ -312,16 +393,17 @@ export class MainComponent implements AfterViewInit {
       this.whatsappLink = '#';
       return;
     }
-    // Crear mensaje con lista de productos y cantidades
-    let message = 'Hola, quiero hacer un pedido:%0A';
-    this.cart.forEach(item => {
-      message += `- ${item.quantity} x ${item.name} (${(item.price * item.quantity).toFixed(2)}€)%0A`;
+    let message = 'Hola, quiero hacer un pedido:\n';
+    this.cart.forEach((item) => {
+      message += `- ${item.quantity} x ${item.name} (${(
+        item.price * item.quantity
+      ).toFixed(2)}€)\n`;
     });
     message += `Total: ${this.getTotal().toFixed(2)}€`;
 
-    // Enlace a WhatsApp (número de ejemplo)
-    const phone = '123456789'; // Pon aquí tu número
-    this.whatsappLink = `https://wa.me/${phone}?text=${message}`;
+    const phone = '34655091360'; // tu número sin espacios ni símbolos
+    const encodedMessage = encodeURIComponent(message);
+    this.whatsappLink = `https://wa.me/${phone}?text=${encodedMessage}`;
   }
 
   // Método para abrir el modal de descripción con datos
@@ -342,15 +424,13 @@ export class MainComponent implements AfterViewInit {
   }
 
   openDescriptionModalById(title: string, contentId: string) {
-  const contentElement = document.getElementById(contentId);
-  if (contentElement) {
-    this.modalTitle = title;
-    this.modalBodyContent = contentElement.innerHTML;
-    const modalEl = document.getElementById('patineteModal');
-    const modal = new bootstrap.Modal(modalEl);
-    modal.show();
+    const contentElement = document.getElementById(contentId);
+    if (contentElement) {
+      this.modalTitle = title;
+      this.modalBodyContent = contentElement.innerHTML;
+      const modalEl = document.getElementById('patineteModal');
+      const modal = new bootstrap.Modal(modalEl);
+      modal.show();
+    }
   }
-}
-
-
 }
