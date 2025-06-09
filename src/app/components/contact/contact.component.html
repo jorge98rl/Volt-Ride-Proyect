@@ -1,0 +1,59 @@
+<section class="d-flex flex-row mt-1 mb-5">
+    <div class=" w-100 bg_dark d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+        data-aos-duration="1000">
+        <h1 class="h1-style-secundary text-center mt-3 w-100 pe-2 ps-2" id="Contacto">
+            Contacto
+        </h1>
+        <p class="text-white text-width-center text-center">
+            ¿Necesitas ayuda o soporte técnico?<br>
+            Mándanos un mensaje y nuestro equipo te atenderá lo antes posible.
+        </p>
+
+
+        <div class="container-fluid mt-5">
+  <!-- CONTENEDOR CENTRAL -->
+  <div class="mx-auto" style="max-width: 600px;">
+    
+    <!-- FORMULARIO -->
+    <form 
+      (ngSubmit)="enviarCorreo()" 
+      #contactForm="ngForm"
+      class="mb-5 border border-2 p-3 rounded"
+    >
+      <div class="mb-3">
+        <label for="subject" class="form-label text-white">Asunto</label>
+        <input type="text" class="form-control" id="subject" name="subject" [(ngModel)]="asunto" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label text-white">Mensaje</label>
+        <textarea class="form-control" id="message" name="message" rows="4" [(ngModel)]="mensaje" required></textarea>
+      </div>
+      <button 
+        type="submit" 
+        class="btn w-100"
+        style="background-color: #ffd08c; border-radius: 10px;"
+      >Enviar</button>
+    </form>
+
+    <!-- MAPA -->
+    <div class="my-4">
+      <div class="ratio ratio-1x1 ratio-md-16x9">
+        <iframe
+          src="https://www.google.com/maps/embed/v1/place?q=Bulevar+cuidad+de+Vícar 598&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+    </div>
+
+
+</section>

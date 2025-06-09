@@ -6,22 +6,30 @@
                 <h1 class="text-center  h1-style" id="Inicio" style="cursor: pointer;">
                     Inicio
                 </h1>
-                <p class="text-white w-75 text-size text-width text-widht-center">En nuestra tienda de patines y
+                <p class="text-white w-75 text-size text-width text-widht-center text-start">En nuestra tienda de
+                    patines y
                     patinetes eléctricos, llevamos la movilidad
                     personal a otro nivel. No somos solo una tienda, somos el punto de partida para una nueva forma
                     de desplazarte, de vivir la ciudad y de moverte con libertad, estilo y tecnología. Nos
                     especializamos en ofrecer una experiencia única a cada cliente, con una amplia gama de patinetes
-                    eléctricos de última generación: desde modelos urbanos ultraligeros perfectos para ir al
+                    eléctricos de última generación:
+                <p class="text-white w-75 text-size text-width text-widht-center text-start"> desde modelos urbanos
+                    ultraligeros perfectos para ir al
                     trabajo, hasta versiones todoterreno con suspensión avanzada y gran autonomía para los más
                     aventureros. Cada producto que tenemos ha sido cuidadosamente seleccionado por su innovación,
                     calidad, seguridad y diseño, adaptándose a todo tipo de usuario, desde principiantes hasta
                     riders expertos.
                 </p>
-                <p class="text-white w-75 text-size text-width text-widht-center">Además, contamos con accesorios,
+
+                <p class="text-white w-75 text-size text-width text-widht-center text-start">Además, contamos con
+                    accesorios,
                     servicio técnico especializado y asesoramiento
                     personalizado para ayudarte a elegir el modelo que mejor se adapte a tus necesidades. En un
                     mundo que cada vez exige soluciones más sostenibles y eficientes, en nuestra tienda encontrarás
-                    mucho más que un medio de transporte: descubrirás una nueva forma de moverte que conecta con el
+                    mucho más que un medio de transporte:
+                </p>
+                <p class="text-white w-75 text-size text-width text-widht-center text-start">descubrirás una nueva forma
+                    de moverte que conecta con el
                     futuro. Porque no vendemos simplemente patinetes, ofrecemos libertad sobre ruedas. Ven y sé
                     parte de la revolución eléctrica.
                 </p>
@@ -45,34 +53,60 @@
             </h2>
             <p class="text-white text-width-center">Descubre toda nuestra gama de patinetes eléctricos.
             </p>
-            <div class="d-flex flex-row gap-3 flex-wrap w-75">
+            <div class="d-flex flex-row gap-3 flex-wrap w-75 justify-content-center mb-5">
 
 
-                <div *ngFor="let product of products" class="card mx-auto my-3" style="max-width: 350px; width: 90%;"
-                    data-aos="zoom-in" data-aos-delay="100" data-aos-duration="600">
-                    <div class="card-header">{{ product.name }}</div>
-                    <div class="card-body">
-                        <img src="{{ product.image }}" alt="{{ product.name }}" class="img-fluid img-thumbnail"
-                            style="cursor: pointer;" (click)="openImageModal(product.fullImage)" />
-                    </div>
-                    <div class="card-footer d-flex flex-column w-100 justify-content-center">
-                        <div class="d-flex flex-row justify-content-center align-items-center mb-2">
-                            <span class="m-2 fs-3" style="text-decoration: line-through;">{{ product.price }}€</span>
-                            <span class="m-2 fs-3">{{ product.priceDescount }}€</span>
-                            <button class="btn btn-link p-0 m-2" style="cursor:pointer; color: inherit;"
-                                (click)="addToCart(product)"
-                                [attr.aria-label]="'Añadir ' + product.name + ' al carrito'">
-                                <i class="fa-solid fa-cart-shopping fa-2x"></i>
-                            </button>
-                        </div>
-                        <button class="btn btn-danger w-100"
-                            (click)="openDescriptionModalById(product.name, product.descId)">
-                            Saber más
+                <div id="productCarousel" class="carousel slide d-flex justify-content-between" data-bs-ride="carousel">
+                    <!-- Indicadores dinámicos -->
+                    <div class="carousel-indicators">
+                        <button *ngFor="let product of products; let i = index" type="button"
+                            data-bs-target="#productCarousel" [attr.data-bs-slide-to]="i" [class.active]="i === 0"
+                            [attr.aria-current]="i === 0 ? 'true' : null" [attr.aria-label]="'Slide ' + (i + 1)">
                         </button>
-
-                        <!-- Contenido modal oculto -->
-                        <div [id]="product.descId" style="display:none;" [innerHTML]="product.description"></div>
                     </div>
+
+                    <!-- Items del carrusel -->
+                    <div class="carousel-inner">
+                        <div *ngFor="let product of products; let i = index" class="carousel-item"
+                            [class.active]="i === 0">
+                            <img [src]="product.image" [alt]="product.name" class="d-block mx-auto"
+                                style="max-height: 600px; width: 100%; object-fit: contain;"
+                                (click)="onImageClick($event, product.fullImage)" />
+
+                            <div class="carousel-caption d-block bg-dark bg-opacity-50 p-3 rounded ">
+                                <h5>{{ product.name }}</h5>
+                                <p>
+                                    <span class="text-decoration-line-through">{{ product.price }}€</span>
+                                    <span class="ms-2 fw-bold">{{ product.priceDescount }}€</span>
+                                </p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button class="btn btn-light me-2" (click)="addToCart(product)"
+                                        [attr.aria-label]="'Añadir ' + product.name + ' al carrito'">
+                                        <i class="fa-solid fa-cart-shopping"></i> Añadir
+                                    </button>
+                                    <button class="btn btn-danger"
+                                        (click)="openDescriptionModalById(product.name, product.descId)">
+                                        Saber más
+                                    </button>
+                                </div>
+                                <!-- Contenido oculto para el modal -->
+                                <div [id]="product.descId" style="display:none;" [innerHTML]="product.description">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controles -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
 
             </div>
@@ -140,7 +174,8 @@
                             <a [href]="whatsappLink" target="_blank" class="btn btn-success"
                                 [class.disabled]="cart.length === 0"
                                 [attr.aria-disabled]="cart.length === 0 ? true : null"
-                                [style.pointerEvents]="cart.length === 0 ? 'none' : 'auto'" rel="noopener noreferrer">
+                                [style.pointerEvents]="cart.length === 0 ? 'none' : 'auto'" rel="noopener noreferrer"
+                                (click)="confirmOrder()">
                                 Finalizar pedido por WhatsApp
                             </a>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -149,21 +184,33 @@
                 </div>
             </div>
 
-            <!-- Modal Pedido realizado correctamente -->
-            <div class="modal fade" id="orderSentModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" id="orderContent">
-                    <div class="modal-content">
-                        <div class="modal-body text-center">
-                            <h5>✅ Pedido enviado</h5>
-                            <p>El carrito se ha vaciado correctamente.</p>
-                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+
+
+            <!-- Enlace WhatsApp flotante -->
+            <a href="https://wa.me/34633600225?text=Necesito%20más%20información%20acerca%20de%20los%20productos%20%F0%9F%98%80"
+                class="whatsapp-float" target="_blank" title="Contactamos directamente para cualquier duda">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <!-- Modal pedido realizado -->
+            <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0 shadow-lg rounded-4 p-3">
+                        <div class="modal-body text-center py-4">
+                            <div class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                            </div>
+                            <h4 class="mb-3 text-success">¡Pedido enviado con éxito!</h4>
+                            <p class="text-muted mb-4">Tu pedido ha sido enviado por WhatsApp. Nos pondremos en contacto
+                                contigo lo antes posible. ¡Gracias por tu compra!</p>
+                            <button type="button" class="btn btn-outline-success px-4" data-bs-dismiss="modal">
+                                Cerrar
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Enlace WhatsApp flotante -->
-            <a href="https://wa.me/34655091360?text=Necesito%20más%20información%20acerca%20de%20los%20productos%20%F0%9F%98%80"
-                class="whatsapp-float" target="_blank" title="Contactamos directamente para cualquier duda">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+        </div>
+    </section>
+</main>

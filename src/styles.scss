@@ -186,6 +186,11 @@ ul li a:hover {
     font-size: 0.9rem;
 }
 
+p {
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+
 @media screen and (max-width: 991px) {
     .responsive-medium {
         display: flex;
@@ -214,4 +219,21 @@ ul li a:hover {
     .h1-style:hover {
         background-size: 80% 2px;
     }
+}
+
+@media (max-width: 768px) {
+    .text-width {
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.5;
+
+    }
+
+    .text-width:nth-child(5) {
+        margin-bottom: 70px;
+    }
+}
+
+.carousel-item img {
+  transition: none !important;
 }

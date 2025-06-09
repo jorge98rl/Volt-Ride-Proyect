@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 declare var bootstrap: any;
 
 interface CartItem {
@@ -433,4 +434,31 @@ export class MainComponent implements AfterViewInit {
       modal.show();
     }
   }
+
+  confirmOrder(): void {
+  // Cerrar modal del carrito si está abierto
+  const cartModalEl = document.getElementById('cartModal');
+  if (cartModalEl) {
+    const cartModal = bootstrap.Modal.getInstance(cartModalEl);
+    if (cartModal) {
+      cartModal.hide();
+    }
+  }
+
+  // Mostrar modal de éxito
+  const successModalEl = document.getElementById('successModal');
+  if (successModalEl) {
+    const successModal = new bootstrap.Modal(successModalEl);
+    successModal.show();
+  }
+
+  // Vaciar carrito y actualizar WhatsApp
+  this.cart = [];
+  this.updateWhatsappLink();
+}
+
+onImageClick(event: MouseEvent, fullImageUrl: string): void {
+  event.stopPropagation(); // detiene propagación al carrusel
+  this.openImageModal(fullImageUrl);
+}
 }
