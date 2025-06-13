@@ -402,7 +402,7 @@ export class MainComponent implements AfterViewInit {
     });
     message += `Total: ${this.getTotal().toFixed(2)}€`;
 
-    const phone = '34655091360'; // tu número sin espacios ni símbolos
+    const phone = '34633600225'; // tu número sin espacios ni símbolos
     const encodedMessage = encodeURIComponent(message);
     this.whatsappLink = `https://wa.me/${phone}?text=${encodedMessage}`;
   }
