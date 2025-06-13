@@ -26,8 +26,8 @@ export class MainComponent implements AfterViewInit {
   products = [
     {
       name: 'Ecoxtrem Bison GT BLUE/WHITE',
-      priceDescount: 749,
-      price: 599,
+      priceWeb: 599,
+      price: 470,
       image: 'assets/patinete-2.webp',
       fullImage: 'assets/patinete-2.webp',
       descId: 'desc-bison-gt',
@@ -62,8 +62,8 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem Bison GT BLUE/GREY',
-      priceDescount: 749,
-      price: 599,
+      priceWeb: 599,
+      price: 470,
       image: 'assets/patinete-3.webp',
       fullImage: 'assets/patinete-3.webp',
       descId: 'desc-bison-gt',
@@ -98,8 +98,8 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 ORANGE/BLACK',
-      priceDescount: 749,
-      price: 699,
+      priceWeb: 699,
+      price: 550,
       image: 'assets/patinete-4.webp',
       fullImage: 'assets/patinete-4.webp',
       descId: 'desc-ecoxtrem',
@@ -134,8 +134,8 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 Tank BLUE/WHITE',
-      priceDescount: 749,
-      price: 699,
+      priceWeb: 699,
+      price: 550,
       image: 'assets/patinete-5.webp',
       fullImage: 'assets/patinete-5.webp',
       descId: 'desc-ecoxtrem',
@@ -170,7 +170,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem Linear',
-      priceDescount: 749,
+      priceWeb: 749,
       price: 330,
       image: 'assets/patinete-6.webp',
       fullImage: 'assets/patinete-6.webp',
@@ -204,7 +204,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'OOTD T10',
-      priceDescount: 749,
+      priceWeb: 600,
       price: 549,
       image: 'assets/patinete-7.webp',
       fullImage: 'assets/patinete-7.webp',
@@ -241,8 +241,8 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 GREEN/BLACK',
-      priceDescount: 749,
-      price: 699,
+      priceWeb: 699,
+      price: 550,
       image: 'assets/patinete-8.webp',
       fullImage: 'assets/patinete-8.webp',
       descId: 'desc-ecoxtrem',
@@ -277,8 +277,8 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem M41 2000W',
-      priceDescount: 749,
-      price: 1000,
+      priceWeb: 1149,
+      price: 749,
       image: 'assets/patinete-9.webp',
       fullImage: 'assets/patinete-9.webp',
       descId: 'desc-ecoxtrem-2000W',
@@ -343,7 +343,7 @@ export class MainComponent implements AfterViewInit {
     if (existingItem) {
       existingItem.quantity++;
     } else {
-      this.cart.push({ name: product.name, price: product.priceDescount, quantity: 1 });
+      this.cart.push({ name: product.name, price: product.priceWeb, quantity: 1 });
     }
 
     this.updateWhatsappLink();

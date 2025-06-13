@@ -75,10 +75,15 @@
 
                             <div class="carousel-caption d-block bg-dark bg-opacity-50 p-3 rounded ">
                                 <h5>{{ product.name }}</h5>
-                                <p>
-                                    <span class="text-decoration-line-through">{{ product.price }}€</span>
-                                    <span class="ms-2 fw-bold">{{ product.priceDescount }}€</span>
+                                <p class="mb-1 text-white">
+                                    <small class="d-block text-uppercase fw-bold text-white">Precio tienda</small>
+                                    <span class=" fw-bold">{{ product.price }}€</span>
                                 </p>
+                                <p class="mb-1 text-white">
+                                    <small class="d-block text-uppercase fw-bold text-white">Precio web</small>
+                                    <span class=" fw-bold">{{ product.priceWeb }}€</span>
+                                </p>
+                                <p>
                                 <div class="d-flex justify-content-center align-items-center">
                                     <button class="btn btn-light me-2" (click)="addToCart(product)"
                                         [attr.aria-label]="'Añadir ' + product.name + ' al carrito'">
