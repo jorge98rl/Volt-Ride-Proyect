@@ -170,7 +170,7 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'Ecoxtrem Linear',
-      priceWeb: 749,
+      priceWeb: 380,
       price: 330,
       image: 'assets/patinete-6.webp',
       fullImage: 'assets/patinete-6.webp',
